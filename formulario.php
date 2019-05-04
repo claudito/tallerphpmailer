@@ -20,6 +20,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.js"></script>
 
 
+    <!-- Sweet Alert -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
+
+
+
+
     <title>Formulario de Contacto</title>
   </head>
   <body>
@@ -68,7 +75,7 @@
     $('.mensaje').summernote({
         placeholder: 'Ingrese el contenido de su mensaje',
         tabsize: 2,
-        height: 100
+        height: 250
       });
     </script>
 
@@ -103,7 +110,48 @@
 
 
 
-  
+  <script>
+    
+  $(document).on('submit','#enviar',function(e){
+
+   parametros = $(this).serialize();
+   
+   
+   $.ajax({
+   
+   url:"send.php",
+   type:"POST",
+   data:parametros,
+   //dataType:"JSON",
+   beforeSend:function()
+   {
+
+
+
+   },
+   success:function()
+   {
+
+
+
+
+
+   }
+
+
+
+
+
+   });
+   
+
+ 
+
+  e.preventDefault();
+  });
+
+
+  </script>
   </body>
 </html>
 
