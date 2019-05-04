@@ -133,7 +133,7 @@
    url:"send.php",
    type:"POST",
    data:parametros,
-   //dataType:"JSON",
+   dataType:"JSON",
    beforeSend:function()
    {
    
@@ -148,18 +148,24 @@
   
 
    },
-   success:function()
+   success:function(data)
    {
 
      swal({
 
-    title: "Buen Trabajo",
-    text: "Mensaje Enviado",
-    type: "success",
+    title: data.title,
+    text:  data.text,
+    type:  data.type,
     timer: 3000,
     showConfirmButton: false
 
     });
+
+
+    $('#enviar')[0].reset();
+    $(".mensaje").summernote("code", "");
+
+
 
    }
 

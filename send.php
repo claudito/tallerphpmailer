@@ -77,13 +77,37 @@ $mail->msgHTML($html);
 if(!$mail->send())
 {
 
-  echo "Mailer Error: " . $mail->ErrorInfo;
+  //echo "Mailer Error: " . $mail->ErrorInfo;
+
+  echo json_encode(
+   array(
+   
+   'title' => 'Error',
+   'text'  => $mail->ErrorInfo,
+   'type'  => 'error'
+
+
+   )
+  );
+
+
 
 }
 else
 {
 
- echo "Correo Enviado";
+// echo "Correo Enviado";
+ echo json_encode(
+   array(
+   
+   'title' => 'Buen Trabajo',
+   'text'  => 'Mensaje Enviado',
+   'type'  => 'success'
+
+
+   )
+  );
+
 
 }
 
