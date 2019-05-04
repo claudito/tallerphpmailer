@@ -125,16 +125,30 @@
    //dataType:"JSON",
    beforeSend:function()
    {
+   
+    swal({
 
+    title: "Enviando Mensaje",
+    text: "Espere un momento no Cierre la Ventana",
+    imageUrl: 'img/loader2.gif',
+    showConfirmButton: false
 
+    });
+  
 
    },
    success:function()
    {
 
+     swal({
 
+    title: "Buen Trabajo",
+    text: "Mensaje Enviado",
+    type: "success",
+    timer: 3000,
+    showConfirmButton: false
 
-
+    });
 
    }
 
