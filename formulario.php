@@ -40,6 +40,17 @@
     <h1>Enviar Correo</h1> <hr>
 
    <form id="enviar" autocomplete="off">
+
+     <div class="form-group row">
+
+    <label  class="col-sm-2 col-form-label">Nombre</label>
+    <div class="col-sm-6">
+      <input type="text" name="nombre" class="form-control" placeholder="Ingresar su Nombre" required>
+    </div>
+
+    </div>
+
+
      
     <div class="form-group row">
 
